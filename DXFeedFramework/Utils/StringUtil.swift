@@ -14,7 +14,7 @@ public class StringUtil {
         var value = String(format: "%2X", Int(char))
         (0..<4 - value.count).forEach { _ in
             value = "0" + value
-        }        
+        }
         let res = char == 0 ? "\\0" : "\\u" + value
         return res
     }

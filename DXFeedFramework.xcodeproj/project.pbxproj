@@ -198,6 +198,11 @@
 		645CAB822C2D572300383F9A /* DXFeedFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 803BAC0D29BFA50700FFAB1C /* DXFeedFramework.framework */; };
 		645CAB832C2D572300383F9A /* DXFeedFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 803BAC0D29BFA50700FFAB1C /* DXFeedFramework.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		645CAB892C2D59A300383F9A /* SwiftCSV in Frameworks */ = {isa = PBXBuildFile; productRef = 645CAB882C2D59A300383F9A /* SwiftCSV */; };
+		645CAB8E2C2EA4D400383F9A /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645CAB8D2C2EA4D400383F9A /* Downloader.swift */; };
+		645CAB902C2EABEF00383F9A /* EventParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645CAB8F2C2EABEF00383F9A /* EventParser.swift */; };
+		645CAB922C2EAC1800383F9A /* CandleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645CAB912C2EAC1800383F9A /* CandleParser.swift */; };
+		645CAB942C2EAC9000383F9A /* TimeAndSaleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645CAB932C2EAC9000383F9A /* TimeAndSaleParser.swift */; };
+		645CAB972C2EE04F00383F9A /* Gzip in Frameworks */ = {isa = PBXBuildFile; productRef = 645CAB962C2EE04F00383F9A /* Gzip */; };
 		645CD0042AE145E600F99FCF /* DumpTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645CD0032AE145E600F99FCF /* DumpTool.swift */; };
 		646064EA2B4D8973009201E2 /* DXLastEventTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646064E92B4D8973009201E2 /* DXLastEventTest.swift */; };
 		646228512A376B0A0029DC97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6462284D2A376B0A0029DC97 /* Main.storyboard */; };
@@ -855,6 +860,10 @@
 		645CAB792C2D56C500383F9A /* CandleDataResponseReader */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CandleDataResponseReader; sourceTree = BUILT_PRODUCTS_DIR; };
 		645CAB7B2C2D56C500383F9A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		645CAB8A2C2D5FA300383F9A /* CandleDataResponseReader.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = CandleDataResponseReader.entitlements; sourceTree = "<group>"; };
+		645CAB8D2C2EA4D400383F9A /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
+		645CAB8F2C2EABEF00383F9A /* EventParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventParser.swift; sourceTree = "<group>"; };
+		645CAB912C2EAC1800383F9A /* CandleParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandleParser.swift; sourceTree = "<group>"; };
+		645CAB932C2EAC9000383F9A /* TimeAndSaleParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAndSaleParser.swift; sourceTree = "<group>"; };
 		645CD0032AE145E600F99FCF /* DumpTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DumpTool.swift; sourceTree = "<group>"; };
 		646064E92B4D8973009201E2 /* DXLastEventTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DXLastEventTest.swift; sourceTree = "<group>"; };
 		6462284E2A376B0A0029DC97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -1142,6 +1151,7 @@
 			files = (
 				645CAB822C2D572300383F9A /* DXFeedFramework.framework in Frameworks */,
 				645CAB892C2D59A300383F9A /* SwiftCSV in Frameworks */,
+				645CAB972C2EE04F00383F9A /* Gzip in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1466,6 +1476,10 @@
 			children = (
 				645CAB8A2C2D5FA300383F9A /* CandleDataResponseReader.entitlements */,
 				645CAB7B2C2D56C500383F9A /* main.swift */,
+				645CAB8D2C2EA4D400383F9A /* Downloader.swift */,
+				645CAB8F2C2EABEF00383F9A /* EventParser.swift */,
+				645CAB912C2EAC1800383F9A /* CandleParser.swift */,
+				645CAB932C2EAC9000383F9A /* TimeAndSaleParser.swift */,
 			);
 			path = CandleDataResponseReader;
 			sourceTree = "<group>";
@@ -2266,6 +2280,7 @@
 			name = CandleDataResponseReader;
 			packageProductDependencies = (
 				645CAB882C2D59A300383F9A /* SwiftCSV */,
+				645CAB962C2EE04F00383F9A /* Gzip */,
 			);
 			productName = CandleDataResponseReader;
 			productReference = 645CAB792C2D56C500383F9A /* CandleDataResponseReader */;
@@ -2476,6 +2491,7 @@
 			mainGroup = 803BAC0329BFA50700FFAB1C;
 			packageReferences = (
 				645CAB872C2D598600383F9A /* XCRemoteSwiftPackageReference "SwiftCSV" */,
+				645CAB952C2EB30300383F9A /* XCRemoteSwiftPackageReference "GzipSwift" */,
 			);
 			productRefGroup = 803BAC0E29BFA50700FFAB1C /* Products */;
 			projectDirPath = "";
@@ -2794,6 +2810,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				645CAB7C2C2D56C500383F9A /* main.swift in Sources */,
+				645CAB922C2EAC1800383F9A /* CandleParser.swift in Sources */,
+				645CAB8E2C2EA4D400383F9A /* Downloader.swift in Sources */,
+				645CAB942C2EAC9000383F9A /* TimeAndSaleParser.swift in Sources */,
+				645CAB902C2EABEF00383F9A /* EventParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4567,6 +4587,14 @@
 				minimumVersion = 0.10.0;
 			};
 		};
+		645CAB952C2EB30300383F9A /* XCRemoteSwiftPackageReference "GzipSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/1024jp/GzipSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -4574,6 +4602,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 645CAB872C2D598600383F9A /* XCRemoteSwiftPackageReference "SwiftCSV" */;
 			productName = SwiftCSV;
+		};
+		645CAB962C2EE04F00383F9A /* Gzip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 645CAB952C2EB30300383F9A /* XCRemoteSwiftPackageReference "GzipSwift" */;
+			productName = Gzip;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
