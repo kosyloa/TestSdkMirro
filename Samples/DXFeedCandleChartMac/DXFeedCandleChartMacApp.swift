@@ -1,4 +1,4 @@
-//  
+//
 //
 //  Copyright (C) 2024 Devexperts LLC. All rights reserved.
 //  This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
