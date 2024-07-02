@@ -18,7 +18,7 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: moduleName,
-            url: "https://dxfeed.jfrog.io/artifactory/dxfeed-graal-open/binary/xcframework/xcframework-\(version).zip",
+            url: "https://dxfeed.jfrog.io/artifactory/dxfeed-graal-open/binary/dxfeed-xcframework/dxfeed-xcframework-\(version).zip",
             checksum: checksum
         )
     ]
