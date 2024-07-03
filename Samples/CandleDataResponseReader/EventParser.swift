@@ -25,7 +25,7 @@ extension EventParser {
                 result = result | Candle.snapshotBegin
             case "SNAPSHOT_END":
                 result = result | Candle.snapshotEnd
-            case "SNAPSHOT_SINP":
+            case "SNAPSHOT_SNIP":
                 result = result | Candle.snapshotSnip
             default:
                 print("Undefined event flag \(value)")

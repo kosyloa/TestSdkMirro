@@ -9,20 +9,20 @@ import Foundation
 import Gzip
 
 class Downloader {
-    let userName: String
+    let user: String
     let password: String
     let urlString: String
 
-    init(userName: String, password: String, urlString: String) {
-        self.userName = userName
+    init(user: String, password: String, urlString: String) {
+        self.user = user
         self.password = password
         self.urlString = urlString
     }
 
     private func createSession() -> URLSession {
-        if !userName.isEmpty {
+        if !user.isEmpty {
             let config = URLSessionConfiguration.default
-            let userPasswordString = "\(login):\(password)"
+            let userPasswordString = "\(user):\(password)"
             let userPasswordData = userPasswordString.data(using: .utf8)
             let base64EncodedCredential = userPasswordData!.base64EncodedString()
             config.httpAdditionalHeaders = ["Authorization": "Basic \(base64EncodedCredential)"]

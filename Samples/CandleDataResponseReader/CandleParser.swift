@@ -35,6 +35,9 @@ class CandleParser: EventParser {
                         let time: Long? = try DXTimeFormat.defaultTimeFormat?.parse(value)
                         event?.time = time ?? 0
                     case "Sequence":
+                        if value.isEmpty || value == "0" {
+                            break
+                        }
                         let millisAndSequence = value.split(separator: ":")
                         if millisAndSequence.count == 2 {
                             let sequence = millisAndSequence[1]

@@ -13,9 +13,6 @@ import DXFeedFramework
 /// Candlewebservice provides Candle and TimeAndSale data for particular time period
 /// in the past with from-to period via REST-like API.
 /// For more details see [KB](https://kb.dxfeed.com/en/data-services/aggregated-data-services/candlewebservice.html).
-let login = "demo"
-let password = "demo"
-
 let dateFormatter = DateFormatter()
 dateFormatter.dateFormat = "yyyyMMdd"
 
@@ -27,7 +24,7 @@ let stop = Calendar.current.date(byAdding: .day,
                                  to: Date())!
 // URL for fetching candle events.
 let candleUrl = "https://tools-demo.dxfeed.com/candledata-preview?records=Candle&symbols=IBM{=h}&start=\(dateFormatter.string(from: start))&stop=\(dateFormatter.string(from: stop))&format=csv&compression=gzip"
-let downloaderCandle = Downloader(userName: "demo",
+let downloaderCandle = Downloader(user: "demo",
                                   password: "demo",
                                   urlString: candleUrl)
 downloaderCandle.download { str in
@@ -51,7 +48,7 @@ let stopTns = Calendar.current.date(byAdding: .hour,
 // URL for fetching tns events.
 let tnsUrl = "https://tools-demo.dxfeed.com/candledata-preview?records=TimeAndSale&symbols=IBM&start=\(tnsDateFormatter.string(from: startTns))&stop=\(tnsDateFormatter.string(from: stopTns))&format=csv&compression=gzip"
 
-let tnsDownloader = Downloader(userName: "demo",
+let tnsDownloader = Downloader(user: "demo",
                                password: "demo",
                                urlString: tnsUrl)
 tnsDownloader.download { str in
