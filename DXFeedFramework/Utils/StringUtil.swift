@@ -19,7 +19,7 @@ public class StringUtil {
         return res
     }
 
-    public static func decodeString(_ string: String) -> Int16 {
+    public static func decodeChar(_ string: String) -> Int16 {
         if string == "\\0" {
             return 0
         }

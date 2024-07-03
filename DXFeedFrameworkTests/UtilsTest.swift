@@ -13,13 +13,13 @@ final class UtilsTest: XCTestCase {
         XCTAssertEqual(StringUtil.encodeChar(char: 32), " ")
         XCTAssertEqual(StringUtil.encodeChar(char: 126), "~")
 
-        XCTAssertEqual(StringUtil.decodeString(" "), 32)
-        XCTAssertEqual(StringUtil.decodeString("~"), 126)
+        XCTAssertEqual(StringUtil.decodeChar(" "), 32)
+        XCTAssertEqual(StringUtil.decodeChar("~"), 126)
     }
 
     func testUnicodeCharToString() throws {
         XCTAssertEqual(StringUtil.encodeChar(char: 300), "\\u012C")
-        XCTAssertEqual(StringUtil.decodeString("\\u012C"), 300)
+        XCTAssertEqual(StringUtil.decodeChar("\\u012C"), 300)
     }
 
     func testCharacter() {

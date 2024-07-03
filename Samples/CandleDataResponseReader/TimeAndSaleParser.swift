@@ -44,7 +44,7 @@ class TimeAndSaleParser: EventParser {
                         }
                         event?.time = (event?.time ?? 0) + (Int64(String(millisAndSequence.first!)) ?? 0)
                     case "ExchangeCode":
-                        event?.exchangeCode = StringUtil.decodeString(value)
+                        event?.exchangeCode = StringUtil.decodeChar(value)
                     case "Price":
                         event?.price = Double(value) ?? .nan
                     case "Size":
